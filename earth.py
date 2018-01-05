@@ -5,6 +5,7 @@ import json
 import sys
 import platform
 import shutil
+import config
 from sys import argv
 from PIL import Image
 from io import BytesIO
@@ -12,12 +13,12 @@ from datetime import datetime, timedelta
 
 
 # 倍数
-scale = 4
+scale = config.scale
 
 base = "http://himawari8-dl.nict.go.jp/himawari8/img/D531106/%sd/550" % (scale)
-cdn = 'http://res.cloudinary.com/dpltrw8c1/image/fetch/'
+cdn = config.cdn
 
-wallpaper_path = "F://earth/"
+wallpaper_path = config.wallpaper_path
 wallpaper_path_temp = wallpaper_path + "temp/"
 
 # 宽高应该是固定的
